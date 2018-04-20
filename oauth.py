@@ -11,6 +11,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("user", help="User from which to download the favourite collections")
 parser.add_argument("client_id", help="Your app client ID")
 parser.add_argument("client_secret", help="Your app client secret")
+parser.add_argument("path_to_folder", help="The path to the folder where the images will be downloaded")
 args = parser.parse_args()
 
 # Initialize the work variables
@@ -19,7 +20,7 @@ client_secret = args.client_secret
 user = args.user
 offset = 0
 pics_to_download = []
-pics_folder = "pics/"
+pics_folder = args.path_to_folder
 
 # Get authorization token
 URL = "https://www.deviantart.com/oauth2/token?\
